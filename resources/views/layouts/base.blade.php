@@ -13,6 +13,9 @@
         <!-- Favicon -->
 		<link rel="shortcut icon" href="{{ url(asset('favicon.ico')) }}">
 
+        <!-- Google Material Icons -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
         <!-- Fonts -->
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
