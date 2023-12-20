@@ -14,4 +14,8 @@ class Game extends Model
         'slug',
         'is_active'
     ];
+
+    public function rounds() {
+        return $this->hasMany(Round::class);
+    }
 }
