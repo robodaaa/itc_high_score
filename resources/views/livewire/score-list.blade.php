@@ -1,4 +1,4 @@
-<div class="mt-1 mb-5 w-full">
+<div class="flex flex-col items-stretch justify-start w-full mt-1 mb-5">
     @if (count($list) > 0)
         @php
             $i = 1;
@@ -6,23 +6,24 @@
         @foreach ($list as $item)
             <div
                 @if ($i == 1)
-                    class="border rounded-md p-2 flex flex-row justify-between items-center my-1 bg-yellow-100 border-yellow-500"
+                    class="flex flex-row items-center justify-between p-2 my-1 bg-yellow-100 border border-yellow-500 rounded-md"
                 @else
-                    class="border rounded-md p-2 flex flex-row justify-between items-center my-1">
+                    class="flex flex-row items-center justify-between p-2 my-1 border rounded-md"
                 @endif
-                <div class="mx-3 w-8 h-8 border rounded-md flex justify-center items-center bg-slate-200 text-gray-600">
+            >
+                <div class="flex items-center justify-center w-8 h-8 mx-3 text-gray-600 border rounded-md bg-slate-200">
                     <span class="text-xs uppercase">{{$item['user']->name[0]}}</span>
                 </div>
-                <p class="text-sm text-gray-700 mr-2 font-bold">{{$item['user']->name}}</p>
+                <p class="mr-2 text-sm font-bold text-gray-700">{{$item['user']->name}}</p>
                 <p class="text-sm text-gray-600"><span class="">{{$item['rounds']}}</span> kör</p>
-                <p class=""><span class="font-bold">{{$item['points']}}</span><span class="text-sm text-gray-500 ml-1">pont</span></p>
+                <p class=""><span class="font-bold">{{$item['points']}}</span><span class="ml-1 text-sm text-gray-500">pont</span></p>
             </div>
             @php
                 $i++;
             @endphp
         @endforeach
     @else
-        <div class="border rounded-md py-5 flex flex-col justify-between items-center my-1 text-gray-400">
+        <div class="flex flex-col items-center justify-between py-5 my-1 text-gray-400 border rounded-md">
             <span class="material-symbols-outlined">
                 warning
             </span>

@@ -17,8 +17,6 @@ use Filament\Pages\Page;
 use Filament\Resources\Pages\CreateRecord;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Columns\IconColumn;
-use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -67,23 +65,6 @@ class UserResource extends Resource
                                     ->password(),
                             ]),
                     ]),
-                Group::make()
-                    ->schema([
-                        Section::make()
-                            ->schema([
-                                FileUpload::make('avatar')
-                                    ->label(Lang::get('messages.avatar'))
-                                    ->directory('images/avatars')
-                                    ->preserveFilenames()
-                                    ->image()
-                                    ->imageEditor()
-                                    ->imageEditorAspectRatios([
-                                        '1:1',
-                                    ]),
-                                Toggle::make('is_active')
-                                    ->label(Lang::get('messages.is_active')),
-                            ]),
-                    ])
             ]);
     }
 
@@ -91,8 +72,6 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('avatar')
-                    ->label(Lang::get('messages.avatar')),
                 TextColumn::make('name')
                     ->label(Lang::get('messages.name'))
                     ->searchable()
